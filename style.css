@@ -1,0 +1,226 @@
+/************************* body **********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #142c38;
+}
+
+/******************** outer-most body ***************/
+#outer-body {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/********** Analog & Digital Clock container ********/
+#clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/********************* Digital Clock ******************/
+
+#digital-clock {
+  display:none;
+  padding: 10px;
+  font-size: 60px;
+  width: 350px;
+  height: 150px;
+  border: 4px solid #102d3b;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(0, 0, 0, 0.05), inset 0 15px 15px rgba(0, 0, 0, 0.05);
+}
+
+#digital-time {
+  color: rgb(172, 145, 145);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/****************** Analog Clock *********************/
+#analog-clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/clock.png");
+  background-size: cover;
+  border: 4px solid #102d3b;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(0, 0, 0, 0.05), inset 0 15px 15px rgba(0, 0, 0, 0.05);
+}
+
+#analog-clock:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+#hour-hand,
+#minute-hand,
+#second-hand {
+  position: absolute;
+}
+#analog-clock #hour-hand,
+#hour {
+  position: absolute;
+  top: 19.5%;
+  left: 20%;
+  width: 160px;
+  height: 160px;
+}
+#analog-clock #minute-hand,
+#minute {
+  position: absolute;
+  top: 15.5%;
+  left: 16%;
+  width: 190px;
+  height: 190px;
+}
+#analog-clock #second-hand,
+#second {
+  position: absolute;
+  top: 11%;
+  left: 11%;
+  width: 230px;
+  height: 230px;
+}
+
+#hour,
+#minute,
+#second {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+#hour:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: radial-gradient(orange,red);
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+#minute:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: radial-gradient(rgb(170, 188, 236),blue);
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+#second:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #fff;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+/****************************Change button ***********************/
+
+#change button {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 14px;
+  color: white;
+  background-color: rgb(19, 82, 107);
+}
+
+/************************** Set Alarm Input **********************/
+#alarm-container {
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* input field  for setting up the alarm*/
+#alarm input {
+  border-radius: 10px;
+  font-size: 15px;
+  height: 40px;
+  padding: 0px 10px;
+}
+
+#alarm input:focus {
+  outline: none;
+}
+
+/* button for set the alarm */
+#alarm button {
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(109, 109, 204);
+}
+
+/* alarm list */
+#alarm-list-container {
+  margin: 10px;
+  height: 60vh;
+  overflow: scroll;
+}
+
+#alarm-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+#alarm-list li {
+  font-family:monospace,-webkit-pictograph,Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  color:rgb(56, 49, 49);
+  font-weight: 800;
+  width: 100%;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+#alarm-list button {
+  border:3px solid;
+  border-color: rgb(236, 40, 40);
+  color: rgb(236, 40, 40);
+  background: transparent;
+  font-size: 15px;
+  padding: 5px;
+  height:2rem;
+  width:2rem;
+  border-radius:50%;
+}

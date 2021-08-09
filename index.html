@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Alarm Clock</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Gursimrat Singh Rai" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Css file linking for Styling  -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <!-- outer-most body contains clocks and alarm-list -->
+    <div id="outer-body">
+      <!-- Analog and Digital Clock Container -->
+      <div id="clock-container">
+        <!-- Analog Clock -->
+        <div id="analog-clock">
+          <div id="hour-hand">
+            <div id="hour"></div>
+          </div>
+          <div id="minute-hand">
+            <div id="minute"></div>
+          </div>
+          <div id="second-hand">
+            <div id="second"></div>
+          </div>
+        </div>
+
+        <!-- Digital Clock -->
+        <div id="digital-clock">
+          <div id="digital-time"></div>
+        </div>
+      </div>
+
+      <!-- button to change the type of clock -->
+      <div id="change">
+        <button onclick="change()">Change Clock</button>
+      </div>
+
+      <!-- Set Alarm and alarm-llist container -->
+      <div id="alarm-container">
+        <!-- Set up the Alarm -->
+        <div id="alarm">
+          <input type="time" id="alarmTime" step="2" />
+          <button type="reset" onClick="setAlarm(this)" id="alarmButton">
+            Set Alarm
+          </button>
+        </div>
+
+        <!-- Alarms -->
+        <div id="alarm-list-container">
+          <h2>Alarms</h2>
+          <ul id="alarm-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- javascript file linking  -->
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
