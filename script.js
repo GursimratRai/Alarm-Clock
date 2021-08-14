@@ -44,7 +44,8 @@ function setAlarm() {
       };
 
       //<li class="list" > 
-      //        HH:MM:SS AM/PM <button onClick="deleteAlarm()" id="xxxxxx" > Delete </button> 
+      //        HH:MM:SS AM/PM 
+      //        <button onClick="deleteAlarm()" id="xxxxxx" > Delete </button> 
       //</li>
       li.appendChild(btn);
       alarmList.appendChild(li);
